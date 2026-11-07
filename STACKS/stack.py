@@ -46,6 +46,33 @@ class Stack:
             
         return True
     
+    def is_balanced(self, parenthesis):
+        if parenthesis is None:
+            return None
+        
+        self.__top = None
+        
+        for p in parenthesis:
+            if p in "([{":
+                self.push(p)
+            elif p in ")]}":
+                if self.__top is None:
+                    return False
+                
+                if (
+                    ( self.__top.data == "(" and p == ")" ) or
+                    ( self.__top.data == "[" and p == "]" ) or
+                    ( self.__top.data == "{" and p == "}" ) 
+                     ):
+                    self.pop()
+                else:
+                    return False
+                
+        if self.__top is None:
+            return True
+        else:
+            return False
+    
     def display(self):
         assert self.__top, "Stack is empty"
         current = self.__top
