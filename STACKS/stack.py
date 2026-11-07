@@ -21,6 +21,30 @@ class Stack:
             return False
         else:
             return True
+        
+    def is_palindrome(self, word):
+        if not isinstance(word, str):
+            raise ValueError("Word must be a string")
+        
+        if not word.strip():
+            raise ValueError("Word cannot be empty")
+        
+        s = Stack()
+        word = word.upper()
+        count = 0
+  
+        for ch in word:
+            s.push(ch)
+            count += 1
+            
+        if count < 3:
+            return None
+            
+        for ch in word:
+            if ch != s.pop():
+                return False
+            
+        return True
     
     def display(self):
         assert self.__top, "Stack is empty"
