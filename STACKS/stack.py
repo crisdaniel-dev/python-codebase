@@ -10,3 +10,23 @@ class Stack:
         node.next = self.__top
         self.__top = node
         
+    def pop(self):
+        assert self.__top, "Stack is empty"
+        top = self.__top.data
+        self.__top = self.__top.next
+        return top
+    
+    def is_empty(self):
+        if self.__top:
+            return False
+        else:
+            return True
+    
+    def display(self):
+        assert self.__top, "Stack is empty"
+        current = self.__top
+        output = ""
+        while current:
+            output += str(current.data) + " "
+            current = current.next
+        return output.strip()
