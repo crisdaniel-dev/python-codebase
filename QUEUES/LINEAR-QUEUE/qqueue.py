@@ -44,7 +44,7 @@ class Queue:
     
     def display(self):
         assert self.__front, "Queue is empty"
-        current = self.__front.data
+        current = self.__front
         output = ""
         while current:
             output += str(current.data) + " "
