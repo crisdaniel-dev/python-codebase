@@ -41,3 +41,12 @@ class Queue:
             count += 1
             current = current.next
         return count
+    
+    def display(self):
+        assert self.__front, "Queue is empty"
+        current = self.__front.data
+        output = ""
+        while current:
+            output += str(current.data) + " "
+            current = current.next
+        return output.strip()
