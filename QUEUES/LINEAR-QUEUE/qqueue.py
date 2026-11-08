@@ -21,3 +21,23 @@ class Queue:
         if not self.__front:
             self.__rear = None
         return front
+    
+    def peek(self):
+        assert self.__front, "Queue is empty"
+        return self.__front.data
+    
+    def is_empty(self):
+        if self.__front:
+            return False
+        else:
+            return True
+        
+    def get_size(self):
+        if not self.__front:
+            return 0
+        count = 0
+        current = self.__front
+        while current:
+            count += 1
+            current = current.next
+        return count
