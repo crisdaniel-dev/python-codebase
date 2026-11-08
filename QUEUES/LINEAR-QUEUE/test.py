@@ -1,0 +1,18 @@
+from qqueue import Queue
+
+q = Queue()
+q.enqueue(1)
+print("Enqueue: ", end="")
+print(q.display())
+q.enqueue(2)
+print("Enqueue: ", end="")
+print(q.display())
+q.enqueue(3)
+print("Enqueue: ", end="")
+print(q.display())
+q.dequeue()
+print("Dequeue: ", end="")
+print(q.display())
+print("Peek:",q.peek())
+print("Size:", q.get_size())
+print("Is the Queue is empty:",q.is_empty())
