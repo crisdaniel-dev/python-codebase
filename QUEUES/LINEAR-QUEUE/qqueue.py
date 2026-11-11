@@ -1,6 +1,6 @@
 from node import Node
 
-class Queue:
+class LinearQueue:
     
     def __init__(self):
         self.__front = self.__rear = None
@@ -41,6 +41,17 @@ class Queue:
             count += 1
             current = current.next
         return count
+    
+    def front(self):
+        assert self.__front, "Queue is empty"
+        return self.__front.data
+    
+    def rear(self):
+        assert self.__rear, "Queue is empty"
+        return self.__rear.data
+    
+    def clear(self):
+        self.__front = self.__rear = None
     
     def display(self):
         assert self.__front, "Queue is empty"
